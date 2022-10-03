@@ -1,0 +1,29 @@
+.card__wrapper {
+  position: relative;
+}
+
+.card__details {
+  @include flex-center;
+  @include absolute-position;
+  color: $color-light;
+  background-color: rgba(#000000, 0.3);
+  opacity: 0;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.card__link {
+  &::after {
+    content: "";
+    @include absolute-position;
+  }
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}

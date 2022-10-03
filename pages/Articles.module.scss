@@ -1,0 +1,28 @@
+.page-title {
+  &.visually-hidden {
+    @include visually-hidden;
+  }
+}
+
+.section-title {
+  &.visually-hidden {
+    @include visually-hidden;
+  }
+}
+
+.articles {
+  padding-top: 4.5rem;
+  padding-bottom: 10rem;
+  background-color: $bg-primary;
+}
+
+.container {
+  @include container-styles;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3rem;
+  row-gap: 5rem;
+}
