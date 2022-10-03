@@ -14,7 +14,7 @@ const Card = () => {
         layout="responsive"
       />
       <div className={styles.card__details}>
-        <Link href={"/as"}>
+        <Link href={"/article"}>
           <a className={styles.card__link}>
             <h3 className={styles.card__title}>Italy. Island Capry</h3>
           </a>

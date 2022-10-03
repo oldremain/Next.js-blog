@@ -8,6 +8,10 @@
   @include container-styles;
 }
 
+.section-title {
+  @include visually-hidden;
+}
+
 .new-article__form {
   display: flex;
   flex-direction: column;

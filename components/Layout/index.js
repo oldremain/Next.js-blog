@@ -8,7 +8,7 @@ import styles from "./Layout.module.scss";
 const Layout = ({ children }) => {
   const router = useRouter();
   const isShowCreateLink =
-    router.pathname === "/" || router.pathname === "article";
+    router.pathname === "/" || router.pathname === "/article";
 
   return (
     <>
