@@ -4,14 +4,16 @@ import FormControl from "../../components/FormControl";
 import Input from "../../components/FormControl/Input";
 import Label from "../../components/FormControl/Label";
 import TextArea from "../../components/FormControl/TextArea";
+import Container from "../../components/Layout/Container";
+import SectionTitle from "../../components/SectionTitle";
 
 import styles from "./NewArticle.module.scss";
 
 const NewArticle = () => {
   return (
     <section className={styles["new-article"]}>
-      <h2 className={styles["section-title"]}>Create new awesome article</h2>
-      <div className={styles.container}>
+      <SectionTitle>Create new awesome article</SectionTitle>
+      <Container>
         <BackButton text={"Back"} />
         <form className={`${styles["new-article__form"]} ${styles.form}`}>
           <FormControl>
@@ -36,7 +38,7 @@ const NewArticle = () => {
           </FormControl>
           <Submit text={"Create"} style={{ margin: "20px auto 0" }} />
         </form>
-      </div>
+      </Container>
     </section>
   );
 };

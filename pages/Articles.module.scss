@@ -4,21 +4,11 @@
   }
 }
 
-.section-title {
-  &.visually-hidden {
-    @include visually-hidden;
-  }
-}
-
 .articles {
   height: 100%;
   padding-top: 4.5rem;
   padding-bottom: 10rem;
   background-color: $bg-primary;
-}
-
-.container {
-  @include container-styles;
 }
 
 .wrapper {

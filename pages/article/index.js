@@ -1,6 +1,9 @@
 import Image from "next/image";
 import BackButton from "../../components/Buttons/Back";
 import DeleteButton from "../../components/Buttons/Delete";
+import Container from "../../components/Layout/Container";
+import SectionTitle from "../../components/SectionTitle";
+
 import path from "../../public/assets/images/card2.jpg";
 
 import styles from "./Article.module.scss";
@@ -8,10 +11,8 @@ import styles from "./Article.module.scss";
 const Article = () => {
   return (
     <section className={styles.article}>
-      <div className={styles.container}>
-        <h2 className={styles["section-title"]}>
-          More detailed page about article
-        </h2>
+      <Container>
+        <SectionTitle>More detailed page about article</SectionTitle>
         <BackButton text={"Back"} />
 
         <div className={styles.content}>
@@ -33,7 +34,7 @@ const Article = () => {
             <DeleteButton text={"Delete article"} />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

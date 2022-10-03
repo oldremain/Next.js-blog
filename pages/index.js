@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Card from "../components/Card";
+import Container from "../components/Layout/Container";
+import SectionTitle from "../components/SectionTitle";
 
 import styles from "./Articles.module.scss";
 
@@ -19,12 +21,8 @@ const Home = () => {
       </h1>
 
       <section className={styles.articles}>
-        <h2
-          className={`${styles["section-title"]} ${styles["visually-hidden"]}`}
-        >
-          Create your new awesome article
-        </h2>
-        <div className={styles.container}>
+        <SectionTitle>Create your new awesome article</SectionTitle>
+        <Container>
           <div className={styles.wrapper}>
             <Card />
             <Card />
@@ -34,7 +32,7 @@ const Home = () => {
             <Card />
             <Card />
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

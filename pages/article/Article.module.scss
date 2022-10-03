@@ -4,11 +4,6 @@
   background-color: $bg-primary;
 }
 
-.container {
-  @include container-styles;
-  height: 100%;
-}
-
 .section-title {
   @include visually-hidden;
 }
@@ -47,5 +42,4 @@
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  cursor: pointer;
 }
