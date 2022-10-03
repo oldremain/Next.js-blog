@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Arrow from "../../../public/assets/icons/arrow.svg";
+import Arrow from "/public/assets/icons/arrow.svg";
 
 import styles from "./Back.module.scss";
 

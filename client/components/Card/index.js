@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import path from "../../public/assets/images/card1.jpg";
+import path from "/public/assets/images/card1.jpg";
 
 import styles from "./Card.module.scss";
 

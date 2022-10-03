@@ -1,22 +1,28 @@
 {
   "name": "next-blog",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "client": "npm run dev --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oldremain/Next.js-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oldremain/Next.js-blog/issues"
+  },
+  "homepage": "https://github.com/oldremain/Next.js-blog#readme",
   "dependencies": {
-    "@svgr/webpack": "^6.4.0",
-    "next": "12.3.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1",
-    "sass": "^1.55.0"
+    "axios": "^0.27.2",
+    "concurrently": "^7.4.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.4",
+    "nodemon": "^2.0.20"
   }
 }
