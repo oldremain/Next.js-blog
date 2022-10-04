@@ -2,21 +2,20 @@ import PropTypes from "prop-types";
 
 import Image from "next/image";
 import Link from "next/link";
-//import path from "/public/assets/images/card1.jpg";
 
 import styles from "./Card.module.scss";
 
 const Card = ({ id, title, urlImage }) => {
+  console.log(urlImage);
   return (
     <div className={styles.card__wrapper}>
       <Image
         src={urlImage}
-        width={350}
-        height={270}
         alt="Picture of card"
+        layout="fill"
+        objectFit="cover"
+        blurDataURL="/assets/images/card1.jpg"
         placeholder="blur"
-        blurDataURL="/public/assets/images/card1.jpg"
-        layout="responsive"
       />
       <div className={styles.card__details}>
         <Link href={"/article/[id]"} as={`/article/${id}`}>

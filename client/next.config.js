@@ -9,7 +9,12 @@ const nextConfig = {
     prependData: `@import "abstracts.scss";`,
   },
   images: {
-    domains: ["images.unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({

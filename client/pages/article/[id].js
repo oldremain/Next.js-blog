@@ -26,6 +26,8 @@ const Article = ({ article }) => {
               alt="Picture of article"
               layout="fill"
               objectFit="cover"
+              placeholder="blur"
+              blurDataURL="/assets/images/card1.jpg"
             />
           </div>
           <div className={styles.article__button}>
