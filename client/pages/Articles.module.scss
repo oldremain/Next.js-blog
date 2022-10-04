@@ -5,7 +5,7 @@
 }
 
 .articles {
-  height: 100%;
+  min-height: 100vh;
   padding-top: 4.5rem;
   padding-bottom: 10rem;
   background-color: $bg-primary;

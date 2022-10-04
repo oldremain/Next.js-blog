@@ -1,42 +1,54 @@
+import axios from "axios";
 import Image from "next/image";
+
 import BackButton from "../../components/Buttons/Back";
 import DeleteButton from "../../components/Buttons/Delete";
 import Container from "../../components/Layout/Container";
 import SectionTitle from "../../components/SectionTitle";
 
-import path from "../../public/assets/images/card2.jpg";
-
 import styles from "./Article.module.scss";
 
-const Article = () => {
+const Article = ({ article }) => {
   return (
-    <section className={styles.article}>
+    <section className={styles["article-section"]}>
       <Container>
         <SectionTitle>More detailed page about article</SectionTitle>
         <BackButton text={"Back"} />
 
-        <div className={styles.content}>
-          <div className={styles.description}>
-            <h3 className={styles.content__title}>
-              This would be some awesome title
-            </h3>
-            <p className={styles.content__body}>Body article</p>
+        <article className={styles.article}>
+          <div className={styles.content}>
+            <h3 className={styles.content__title}>{article.title}</h3>
+            <p className={styles.content__body}>{article.description}</p>
           </div>
-          <div className={styles.content__image}>
+          <div className={styles.article__image}>
             <Image
-              src={path}
+              src={article.urlImage}
               alt="Picture of article"
-              placeholder="blur"
-              layout="responsive"
+              layout="fill"
+              objectFit="cover"
             />
           </div>
           <div className={styles.article__button}>
             <DeleteButton text={"Delete article"} />
           </div>
-        </div>
+        </article>
       </Container>
     </section>
   );
 };
+
+export async function getServerSideProps(context) {
+  try {
+    const { data: article } = await axios.get(
+      `http://localhost:5000/api/article/${context.query.id}`
+    );
+
+    return {
+      props: { article },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 export default Article;

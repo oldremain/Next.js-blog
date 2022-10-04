@@ -8,6 +8,9 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles/abstracts")],
     prependData: `@import "abstracts.scss";`,
   },
+  images: {
+    domains: ["images.unsplash.com"],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

@@ -1,8 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json({ extended: true }));
+app.use("/api/article", require("./routes/article.routes"));
 
 const CONNECTION_STR =
   "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.pimymjy.mongodb.net/articles?retryWrites=true&w=majority";

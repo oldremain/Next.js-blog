@@ -1,4 +1,6 @@
-const TextArea = ({ value, onChange, name, ...rest }) => {
+import PropTypes from "prop-types";
+
+const TextArea = ({ name, placeholder, value, onChange, ...rest }) => {
   return (
     <>
       <textarea
@@ -12,3 +14,10 @@ const TextArea = ({ value, onChange, name, ...rest }) => {
 };
 
 export default TextArea;
+
+TextArea.propTypes = {
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
