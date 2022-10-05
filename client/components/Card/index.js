@@ -1,21 +1,23 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
-
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./Card.module.scss";
 
 const Card = ({ id, title, urlImage }) => {
-  console.log(urlImage);
+  const [imagePath, setImagePath] = useState(urlImage);
+
   return (
     <div className={styles.card__wrapper}>
       <Image
-        src={urlImage}
+        src={imagePath}
         alt="Picture of card"
         layout="fill"
         objectFit="cover"
-        blurDataURL="/assets/images/card1.jpg"
+        blurDataURL="/assets/images/err-image.png"
         placeholder="blur"
+        onError={() => setImagePath("/assets/images/err-image.png")}
       />
       <div className={styles.card__details}>
         <Link href={"/article/[id]"} as={`/article/${id}`}>

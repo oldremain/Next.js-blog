@@ -42,4 +42,15 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/remove", async (req, res) => {
+  try {
+    const { articleId } = req.body;
+    await Article.findByIdAndDelete(articleId);
+
+    res.json({ message: "Article deleted successfully" });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 module.exports = router;

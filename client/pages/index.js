@@ -1,9 +1,9 @@
 import axios from "axios";
 import Head from "next/head";
 
-import Card from "../components/Card";
-import Container from "../components/Layout/Container";
-import SectionTitle from "../components/SectionTitle";
+import Card from "@components/Card";
+import Container from "@components/Layout/Container";
+import SectionTitle from "@components/SectionTitle";
 
 import styles from "./Articles.module.scss";
 
