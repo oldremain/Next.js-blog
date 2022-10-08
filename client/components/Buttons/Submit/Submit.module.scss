@@ -7,6 +7,15 @@
   border-radius: 10px;
   letter-spacing: 0.07rem;
   cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0px 10px 25px rgba(148, 174, 213, 0.75);
+
+    .button__text {
+      animation: letter-space 1s forwards;
+    }
+  }
 }
 
 .button__text {
@@ -14,4 +23,16 @@
   font-weight: 300;
   font-size: 1.4rem;
   line-height: 1.14;
+}
+
+@keyframes letter-space {
+  0% {
+    letter-spacing: 0.07rem;
+  }
+  50% {
+    letter-spacing: 0.5em;
+  }
+  100% {
+    letter-spacing: 0.07rem;
+  }
 }

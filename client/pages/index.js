@@ -6,9 +6,10 @@ import Container from "@components/Layout/Container";
 import SectionTitle from "@components/SectionTitle";
 
 import styles from "./Articles.module.scss";
+import NoContent from "@components/NoContent";
 
 const Home = ({ articles }) => {
-  console.log(articles);
+  console.log(articles.length);
 
   return (
     <>
@@ -27,16 +28,20 @@ const Home = ({ articles }) => {
       <section className={styles.articles}>
         <SectionTitle>Create your new awesome article</SectionTitle>
         <Container>
-          <div className={styles.wrapper}>
-            {articles.map((article) => (
-              <Card
-                key={article._id}
-                id={article._id}
-                title={article.title}
-                urlImage={article.urlImage}
-              />
-            ))}
-          </div>
+          {articles.length ? (
+            <div className={styles.wrapper}>
+              {articles.map((article) => (
+                <Card
+                  key={article._id}
+                  id={article._id}
+                  title={article.title}
+                  urlImage={article.urlImage}
+                />
+              ))}
+            </div>
+          ) : (
+            <NoContent>{"Let`s add some articles..."}</NoContent>
+          )}
         </Container>
       </section>
     </>

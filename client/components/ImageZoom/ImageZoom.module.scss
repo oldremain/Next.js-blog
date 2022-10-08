@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60px;
+  min-height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.link {
+  padding: 15px 20px;
+}

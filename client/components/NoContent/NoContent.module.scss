@@ -1,0 +1,12 @@
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  font-weight: 500;
+  font-size: 2rem;
+  color: $color-dark-light;
+}

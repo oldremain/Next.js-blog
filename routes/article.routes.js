@@ -5,12 +5,13 @@ const router = Router();
 
 router.post("/add", async (req, res) => {
   try {
-    const { title, description, urlImage } = req.body;
+    const { title, description, urlImage, date } = req.body;
 
     const article = new Article({
       title,
       description,
       urlImage,
+      date,
     });
 
     await article.save();

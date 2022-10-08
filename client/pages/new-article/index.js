@@ -55,10 +55,13 @@ const NewArticle = () => {
   const router = useRouter();
 
   const handleSubmitForm = async (data) => {
-    console.log(data);
+    const date = new Date().toLocaleDateString();
+    console.log(date);
+
     try {
       await axios.post("http://localhost:5000/api/article/add", {
         ...data,
+        date,
       });
 
       router.push("/");

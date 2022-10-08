@@ -11,12 +11,22 @@
 .article {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 50%);
   column-gap: 25px;
   margin-top: 50px;
   padding: 35px 35px 56px;
   background-color: $bg-header;
   border-radius: 15px;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 25px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 .content__title {
@@ -28,18 +38,41 @@
 }
 
 .content__body {
+  height: 100%;
   font-weight: 300;
   font-size: 1.8rem;
   line-height: 1.16;
+  resize: none;
+  border: none;
+  margin-bottom: 15px;
 }
 
-.article__image {
+.time {
+  margin-top: auto;
+  color: $color-dark-light;
+  font-style: italic;
+
+  .time_create {
+    font-weight: 500;
+  }
+}
+
+.image__container {
   position: relative;
   width: 80%;
   min-height: 300px;
   place-self: center;
   border-radius: 15px;
   overflow: hidden;
+  cursor: pointer;
+
+  &:hover :last-child {
+    bottom: 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 }
 
 .article__button {

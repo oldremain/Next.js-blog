@@ -10,6 +10,7 @@ import SectionTitle from "@components/SectionTitle";
 import Loader from "@components/Loader";
 
 import styles from "./Article.module.scss";
+import ImageZoom from "@components/ImageZoom";
 
 const Article = ({ article }) => {
   const [imagePath, setImagePath] = useState(article.urlImage);
@@ -35,9 +36,15 @@ const Article = ({ article }) => {
         <article className={styles.article}>
           <div className={styles.content}>
             <h3 className={styles.content__title}>{article.title}</h3>
-            <p className={styles.content__body}>{article.description}</p>
+            <textarea className={styles.content__body}>
+              {article.description}
+            </textarea>
+            <p className={styles.time}>
+              Created at:{" "}
+              <span className={styles.time_create}>{article.date}</span>
+            </p>
           </div>
-          <div className={styles.article__image}>
+          <div className={styles.image__container}>
             <Image
               src={imagePath}
               alt="Picture of article"
@@ -46,7 +53,9 @@ const Article = ({ article }) => {
               placeholder="blur"
               blurDataURL="/assets/images/err-image.png"
               onError={() => setImagePath("/assets/images/err-image.png")}
+              className={styles.image}
             />
+            <ImageZoom url={article.urlImage} />
           </div>
           <div className={styles.article__button}>
             <DeleteButton

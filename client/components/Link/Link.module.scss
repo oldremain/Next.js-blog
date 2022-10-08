@@ -7,12 +7,19 @@
   cursor: pointer;
 }
 .link {
-  padding: 5px 13px;
-  font-weight: 300;
+  padding: 8px 20px;
+  font-weight: 500;
   font-size: 1.4rem;
   line-height: 1.14;
   color: $color-light;
   background-color: $bg-link;
   box-shadow: 0px 10px 25px rgba(148, 174, 213, 0.15);
   border-radius: 10px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $bg-link;
+    background-color: lighten($bg-link, 50%);
+    box-shadow: 0px 10px 25px rgba(148, 174, 213, 0.55);
+  }
 }
