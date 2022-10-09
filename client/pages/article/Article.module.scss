@@ -45,6 +45,21 @@
   resize: none;
   border: none;
   margin-bottom: 15px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: $input-border-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-dark-light;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
 }
 
 .time {

@@ -36,7 +36,7 @@ const Article = ({ article }) => {
         <article className={styles.article}>
           <div className={styles.content}>
             <h3 className={styles.content__title}>{article.title}</h3>
-            <textarea className={styles.content__body}>
+            <textarea className={styles.content__body} readOnly>
               {article.description}
             </textarea>
             <p className={styles.time}>

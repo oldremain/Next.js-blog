@@ -4,9 +4,9 @@ import Head from "next/head";
 import Card from "@components/Card";
 import Container from "@components/Layout/Container";
 import SectionTitle from "@components/SectionTitle";
+import NoContent from "@components/NoContent";
 
 import styles from "./Articles.module.scss";
-import NoContent from "@components/NoContent";
 
 const Home = ({ articles }) => {
   console.log(articles.length);
