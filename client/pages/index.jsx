@@ -1,5 +1,6 @@
 import axios from "axios";
 import Head from "next/head";
+import { usePostsContext } from "hooks/useAppContext";
 
 import Card from "@components/Card";
 import Container from "@components/Layout/Container";
@@ -9,7 +10,27 @@ import NoContent from "@components/NoContent";
 import styles from "./Articles.module.scss";
 
 const Home = ({ articles }) => {
-  console.log(articles.length);
+  const { posts } = usePostsContext();
+
+  if (!articles.length && !posts) {
+    return (
+      <section className={styles.articles}>
+        <Container>
+          <NoContent>{"Let`s add some articles..."}</NoContent>;
+        </Container>
+      </section>
+    );
+  }
+
+  if (posts && !posts.length) {
+    return (
+      <section className={styles.articles}>
+        <Container>
+          <NoContent>{"Nothing was found..."}</NoContent>;
+        </Container>
+      </section>
+    );
+  }
 
   return (
     <>
@@ -28,7 +49,7 @@ const Home = ({ articles }) => {
       <section className={styles.articles}>
         <SectionTitle>Create your new awesome article</SectionTitle>
         <Container>
-          {articles.length ? (
+          {articles.length && !posts ? (
             <div className={styles.wrapper}>
               {articles.map((article) => (
                 <Card
@@ -40,7 +61,16 @@ const Home = ({ articles }) => {
               ))}
             </div>
           ) : (
-            <NoContent>{"Let`s add some articles..."}</NoContent>
+            <div className={styles.wrapper}>
+              {posts.map((post) => (
+                <Card
+                  key={post._id}
+                  id={post._id}
+                  title={post.title}
+                  urlImage={post.urlImage}
+                />
+              ))}
+            </div>
           )}
         </Container>
       </section>

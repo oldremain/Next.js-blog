@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const Input = ({ name, type, register, ...rest }) => {
-  return <input type={type} {...register(name)} {...rest} />;
+  return <input id={name} type={type} {...register(name)} {...rest} />;
 };
 
 export default Input;

@@ -80,7 +80,11 @@ const NewArticle = () => {
           onSubmit={handleSubmit(handleSubmitForm)}
         >
           <FormControl>
-            <Label text={"Title"} className={styles.label} />
+            <Label
+              text={"Title"}
+              className={styles.label}
+              name={INPUTS_NAME.title}
+            />
             <Input
               className={`${styles.input} ${
                 titleError ? styles["input--invalid"] : ""
@@ -98,7 +102,11 @@ const NewArticle = () => {
             />
           </FormControl>
           <FormControl>
-            <Label text={"Description"} className={styles.label} />
+            <Label
+              text={"Description"}
+              className={styles.label}
+              name={INPUTS_NAME.description}
+            />
             <TextArea
               className={`${styles.input} ${styles.textarea} ${
                 descriptionError ? styles["input--invalid"] : ""
@@ -118,7 +126,11 @@ const NewArticle = () => {
             />
           </FormControl>
           <FormControl>
-            <Label text={"URL image"} className={styles.label} />
+            <Label
+              text={"URL image"}
+              className={styles.label}
+              name={INPUTS_NAME.urlImage}
+            />
             <Input
               className={`${styles.input} ${
                 urlImageError ? styles["input--invalid"] : ""

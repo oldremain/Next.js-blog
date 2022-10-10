@@ -8,9 +8,9 @@ import DeleteButton from "@components/Buttons/Delete";
 import Container from "@components/Layout/Container";
 import SectionTitle from "@components/SectionTitle";
 import Loader from "@components/Loader";
+import ImageZoom from "@components/ImageZoom";
 
 import styles from "./Article.module.scss";
-import ImageZoom from "@components/ImageZoom";
 
 const Article = ({ article }) => {
   const [imagePath, setImagePath] = useState(article.urlImage);
@@ -36,9 +36,11 @@ const Article = ({ article }) => {
         <article className={styles.article}>
           <div className={styles.content}>
             <h3 className={styles.content__title}>{article.title}</h3>
-            <textarea className={styles.content__body} readOnly>
-              {article.description}
-            </textarea>
+            <textarea
+              className={styles.content__body}
+              value={article.description}
+              readOnly
+            ></textarea>
             <p className={styles.time}>
               Created at:{" "}
               <span className={styles.time_create}>{article.date}</span>

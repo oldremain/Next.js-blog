@@ -1,5 +1,5 @@
 .header {
-  padding: 22px 0;
+  padding: 22px 0 40px 0;
   background-color: $bg-header;
 }
 .container {
@@ -17,4 +17,41 @@
   font-size: 1.8rem;
   line-height: 1.16;
   text-transform: uppercase;
+}
+.form {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media screen and (max-width: 640px) {
+    left: 70%;
+  }
+}
+.form__label {
+  @include visually-hidden;
+}
+.form__input {
+  padding: 10px 5px;
+  border: 1px solid $input-border-color;
+  border-radius: 5px;
+  color: $color-dark-light;
+
+  &:focus {
+    outline: 1px solid $input-border-color;
+  }
+
+  &::placeholder {
+    opacity: 0.8;
+  }
+}
+.form__button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0 10px;
+  border: 1px solid $input-border-color;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
 }

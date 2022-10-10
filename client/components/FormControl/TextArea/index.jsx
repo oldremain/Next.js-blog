@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const TextArea = ({ name, register, ...rest }) => {
   return (
     <>
-      <textarea {...register(name)} {...rest}></textarea>
+      <textarea id={name} {...register(name)} {...rest}></textarea>
     </>
   );
 };
