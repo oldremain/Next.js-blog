@@ -21,14 +21,11 @@ const schema = yup
   .required();
 
 const Navbar = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
+  const validationOptions = {
     resolver: yupResolver(schema),
-  });
+  };
+
+  const { register, handleSubmit, reset } = useForm(validationOptions);
 
   const { setPosts } = usePostsContext();
   const router = useRouter();
@@ -39,14 +36,11 @@ const Navbar = () => {
 
   const handleFormSubmit = async (data) => {
     try {
-      const { data: articles } = await axios.get(
-        "http://localhost:5000/api/article/search",
-        {
-          params: {
-            title: data.search,
-          },
-        }
-      );
+      const { data: articles } = await axios.get("/search", {
+        params: {
+          title: data.search,
+        },
+      });
       setPosts(articles);
       router.push(
         {

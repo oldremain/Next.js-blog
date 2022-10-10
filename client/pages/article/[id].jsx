@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { usePostsContext } from "hooks/useAppContext";
 import axios from "axios";
 
 import BackButton from "@components/Buttons/Back";
@@ -16,14 +17,16 @@ const Article = ({ article }) => {
   const [imagePath, setImagePath] = useState(article.urlImage);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const { setPosts } = usePostsContext();
 
   const handleRemoveArticle = async () => {
     setIsLoading(true);
 
-    await axios.post("http://localhost:5000/api/article/remove", {
+    await axios.post("/remove", {
       articleId: article._id,
     });
 
+    setPosts(null);
     router.push("/");
   };
 
@@ -74,9 +77,7 @@ const Article = ({ article }) => {
 
 export async function getServerSideProps(context) {
   try {
-    const { data: article } = await axios.get(
-      `http://localhost:5000/api/article/${context.query.id}`
-    );
+    const { data: article } = await axios.get(`/${context.query.id}`);
 
     return {
       props: { article },

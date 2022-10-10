@@ -9,8 +9,11 @@ import NoContent from "@components/NoContent";
 
 import styles from "./Articles.module.scss";
 
+axios.defaults.baseURL = "http://localhost:5000/api/article";
+
 const Home = ({ articles }) => {
   const { posts } = usePostsContext();
+  console.log(articles.length, posts);
 
   if (!articles.length && !posts) {
     return (
@@ -80,9 +83,7 @@ const Home = ({ articles }) => {
 
 export async function getServerSideProps() {
   try {
-    const { data: articles } = await axios.get(
-      "http://localhost:5000/api/article"
-    );
+    const { data: articles } = await axios.get();
 
     return {
       props: { articles },

@@ -59,7 +59,7 @@ const NewArticle = () => {
     console.log(date);
 
     try {
-      await axios.post("http://localhost:5000/api/article/add", {
+      await axios.post("/add", {
         ...data,
         date,
       });
