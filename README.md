@@ -2,7 +2,7 @@
 
 ```sh
 npm install
-npm cd client
+cd client
 npm install
 cd ..
 npm run dev
